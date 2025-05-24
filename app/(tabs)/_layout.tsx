@@ -6,22 +6,23 @@ import React from 'react';
 
 export default function TabLayout() {
   const { colors } = useTheme();
-  
+
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.textSecondary,
         tabBarStyle: {
-          backgroundColor: colors.card,
-          borderTopWidth: 1,
-          borderTopColor: Platform.OS === 'ios' ? colors.border : 'transparent',
-          elevation: Platform.OS === 'android' ? 4 : 0,
-          shadowOpacity: Platform.OS === 'ios' ? 0.1 : 0,
+          borderTopWidth: 0,
+          elevation: 8,
+          shadowOpacity: 0.08,
+          shadowRadius: 12,
           height: Platform.OS === 'ios' ? 88 : 64,
           paddingHorizontal: 16,
           paddingBottom: Platform.OS === 'ios' ? 28 : 8,
           paddingTop: 8,
+          borderTopLeftRadius: 24,
+          borderTopRightRadius: 24,
         },
         tabBarLabelStyle: {
           fontFamily: 'Inter-Medium',
@@ -30,7 +31,8 @@ export default function TabLayout() {
         },
         tabBarItemStyle: {
           paddingTop: 8,
-          borderRadius: 12,
+          borderRadius: 16,
+          marginHorizontal: 4,
         },
         headerShown: false,
       }}
@@ -39,28 +41,28 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color, size }) => <Home size={size} color={color} />
+          tabBarIcon: ({ color, size }) => <Home size={size} color={color} />,
         }}
       />
       <Tabs.Screen
         name="transactions"
         options={{
           title: 'Transactions',
-          tabBarIcon: ({ color, size }) => <BarChart3 size={size} color={color} />
+          tabBarIcon: ({ color, size }) => <BarChart3 size={size} color={color} />,
         }}
       />
       <Tabs.Screen
         name="insights"
         options={{
           title: 'Insights',
-          tabBarIcon: ({ color, size }) => <PieChart size={size} color={color} />
+          tabBarIcon: ({ color, size }) => <PieChart size={size} color={color} />,
         }}
       />
       <Tabs.Screen
         name="settings"
         options={{
           title: 'Settings',
-          tabBarIcon: ({ color, size }) => <Settings size={size} color={color} />
+          tabBarIcon: ({ color, size }) => <Settings size={size} color={color} />,
         }}
       />
     </Tabs>
