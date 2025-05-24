@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Alert } from 'react-native';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 // Types
 export interface Transaction {
